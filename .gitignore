@@ -1,0 +1,11 @@
+/.bundle
+/log/*
+!/log/.keep
+/tmp
+coverage/
+public/system
+/node_modules
+dump.rdb
+.DS_Store
+/build
+npm-debug.log

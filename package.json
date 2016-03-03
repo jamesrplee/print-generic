@@ -1,0 +1,28 @@
+{
+  "name": "generic-resizable-v2",
+  "description": "livereload server with stylus and mustache",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "version": "1.0.0",
+  "scripts": {
+    "create": "mkdir -p build/assets/stylesheets && mkdir -p build/assets/javascripts",
+    "inputs": "mustache src/inputs.json src/index.mst > build/index.html",
+    "style": "stylus -u autoprefixer-stylus src/assets/stylesheets/*.styl -o build/assets/stylesheets",
+    "watch:assets": "nodemon --watch src --ext svg,styl,js  --exec 'npm run build:assets'",
+    "watch:template": "nodemon --watch src --ext mst,json --exec 'npm run build:template'",
+    "build:assets": "npm run style",
+    "build:template": "npm run inputs",
+    "dev": "npm run create && npm run build:assets && npm run build:template && parallelshell 'live-server --port=5678 --watch=build --mount=/:build' 'npm run watch:template' 'npm run watch:assets'"
+  },
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.9.2",
+    "live-server": "^0.9.2",
+    "mustache": "^2.2.1",
+    "nodemon": "^1.9.1",
+    "parallelshell": "^2.0.0",
+    "stylus": "^0.53.0"
+  }
+}
