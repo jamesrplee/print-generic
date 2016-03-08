@@ -10,10 +10,11 @@
   "scripts": {
     "create": "mkdir -p build/assets/stylesheets && mkdir -p build/assets/javascripts",
     "inputs": "mustache src/inputs.json src/index.mst > build/index.html",
+    "javascripts" : "cp src/assets/javascripts/* build/assets/javascripts/",
     "style": "stylus -u autoprefixer-stylus src/assets/stylesheets/*.styl -o build/assets/stylesheets",
     "watch:assets": "nodemon --watch src --ext svg,styl,js  --exec 'npm run build:assets'",
     "watch:template": "nodemon --watch src --ext mst,json --exec 'npm run build:template'",
-    "build:assets": "npm run style",
+    "build:assets": "npm run style && npm run javascripts",
     "build:template": "npm run inputs",
     "dev": "npm run create && npm run build:assets && npm run build:template && parallelshell 'live-server --port=5678 --watch=build --mount=/:build' 'npm run watch:template' 'npm run watch:assets'"
   },
