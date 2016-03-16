@@ -1,8 +1,59 @@
+<!DOCTYPE>
 <html>
-  <head>
-    <link rel="stylesheet" href="assets/stylesheets/main.css">
-  </head>
-  <body>
-    {{example}}
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/stylesheets/main.css">
+  <style>
+    body * { 
+      color: {{text-color}};
+      fill: {{text-color}}; 
+    }
+  </style>
+</head>
+<body class="{{crop-marks}}-crop-marks {{^crop-marks}}show-crop-marks{{/crop-marks}}">
+  <div class="page">
+     <div class="background">
+      <div class="background-color" style="background-color: {{background-color}}; opacity: {{background-color-opacity}}"></div>
+      {{#background-image}}
+      <div class="background-image" style="background-image: url('{{background-image}}'); opacity: {{background-image-opacity}}; "></div>
+      {{/background-image}}
+    </div><!--background-->
+
+    <div class="document">
+      <div class="content">
+        <div class="text-content" style="font-size: {{text-content-size}}em;">
+          {{#headline}}<h1 class="headline">{{{headline}}}</h1>{{/headline}}
+          {{#subheading}}<h2 class="subheading">{{{subheading}}}</h2>{{/subheading}}
+          {{#call-to-action}}<h3 class="call-to-action">{{{call-to-action}}}</h3>{{/call-to-action}}
+      </div><!--text-content-->
+
+      <div class="logo" style="height: {{logo-size}}em;">
+        {{#logo-upload}}
+            <img class="uploaded-logo" src="{{logo-upload}}" alt="logo"/>
+        {{/logo-upload}}
+        {{^logo-upload}}
+          <svg viewBox="0 0 56 24"> <path d="M6.50011736,11 C2.91595015,11 0,13.915471 0,17.4997887 C0,21.0840126 2.91595015,24 6.50007042,24 C10.0841907,24 13,21.0839656 13,17.4997887 C12.9998592,13.915471 10.0842376,11 6.50011736,11 L6.50011736,11 L6.50011736,11 Z M6.50014084,21 C4.57022333,21 3,19.4297776 3,17.4999765 C3,15.5700347 4.57012943,14 6.50014084,14 C8.42982362,14 10,15.5698938 10,17.4999765 C10,19.4296837 8.42982362,21 6.50014084,21 L6.50014084,21 L6.50014084,21 Z" id="Shape"></path> <path d="M56,11.0213001 L52.5004147,11.0213001 L52.5004147,6.0294456 L49.5006963,6.0294456 L49.5006963,11.0213001 L45.5001643,11.0213001 L42.5002582,11.0213001 L38.5002425,11.0213001 L38.5002425,6.02967994 C38.5002425,4.42258082 38.8376809,3.89745793 38.9481418,3.76645842 C39.2231437,3.43542103 39.7321649,2.99513146 40.9690165,2.99513146 C41.1425241,2.99513146 41.5469995,3.0384855 42.3028558,3.32874666 L43.379673,0.533137524 C42.4454738,0.174353546 41.656897,0 40.9689226,0 C39.1180346,0 37.6615288,0.62382949 36.6464439,1.84542918 C35.8749081,2.76017599 35.5001956,4.12861699 35.5001956,6.02967994 L35.5001956,11.0213001 L31.5000391,11.0213001 L31.5000391,6.0294456 L28.5000391,6.0294456 L28.5000391,11.0213001 L22.0000782,11.0213001 L22.0000782,18.2278196 C22.0000782,18.8134038 21.9345435,19.3097959 21.8053517,19.704013 C21.7090212,19.959919 21.5390814,20.1948745 21.2958141,20.4132851 C20.8442062,20.811158 20.2567405,21.0048685 19.5000861,21.0048685 C18.74991,21.0048685 18.1655426,20.811158 17.7156248,20.4144099 C17.4504342,20.1800169 17.2730303,19.9376561 17.1738831,19.6736417 L17.159565,19.6363338 C17.1115875,19.5182233 17.0001408,19.1445818 17.0001408,18.2275853 L17.0001408,11.0213001 L14,11.0213001 L14,18.2278196 C14,19.293251 14.121399,20.1159935 14.3711916,20.741979 C14.6437524,21.4589845 15.0997262,22.1027335 15.7285971,22.6587432 C16.7381426,23.5488368 18.0069635,24 19.4998983,24 C20.9987951,24 22.2709021,23.5488368 23.2910101,22.6496037 C23.9165011,22.0881571 24.3674517,21.4356905 24.6312339,20.7101548 L24.6432986,20.6753778 C24.8800407,19.9709333 25.0001721,19.1474877 25.0001721,18.2278665 L25.0001721,14.0159629 L28.50018,14.0159629 L28.50018,24 L31.500133,24 L31.500133,14.0159629 L35.5002895,14.0159629 L35.5002895,24 L38.5001956,24 L38.5001956,14.0159629 L42.5002113,14.0159629 L42.5006338,24 L45.5005399,24 L45.5000704,14.0159629 L49.5006494,14.0159629 L49.5006494,24 L52.5003677,24 L52.5003677,14.0159629 L56,14.0159629 L56,11.0213001 L56,11.0213001 Z" id="Shape"></path> <path d="M42,8.5001878 C42,9.32866443 42.6718569,10 43.5,10 C44.3281431,10 45,9.32852358 45,8.5001878 C45,7.67171116 44.3280961,7 43.5,7 C42.6718569,7.00004695 42,7.67180506 42,8.5001878 L42,8.5001878 L42,8.5001878 Z" id="Shape"></path> </svg>
+        {{/logo-upload}}
+      </div><!--logo-->
+    </div><!--content-->
+    </div><!--document-->
+
+  </div><!--page-->
+
+  <!-- TO ADD A NEW PAGE SIMPLY UN-COMMENT THE FOLLOWING CODE  
+  
+  <div class="page">
+    <div class="document">
+      <div class="content">
+          
+      </div>
+  </div>
+  </div> 
+-->
+ 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/javascripts/main.js"></script>
+</body>
 </html>

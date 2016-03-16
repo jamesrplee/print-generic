@@ -1,3 +1,16 @@
 {
- "example": "example"
+  "crop-marks": "hide",
+  "text-color": "#fff",
+  "background-color": "tomato",
+  "background-color-opacity": "1",
+  "background-image": "https://images.unsplash.com/photo-1453282716202-de94e528067c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=ac9b38e57a8a0724058cdcbe6a687aa8",
+  "background-image-opacity": "0.2",
+
+  "text-content-size": "1",
+  "logo-upload": "",
+  "logo-size": "3",
+
+  "headline": "I like big headings",
+  "subheading": "and I cannot lie.",
+  "call-to-action": "Click to Deny."
 }

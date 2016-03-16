@@ -1,1 +1,207 @@
+@import "crop.css"
+
+*
+  -webkit-margin-before 0 !important
+  -webkit-margin-after 0 !important
+
+html
+  -webkit-font-smoothing antialiased
+  font-family helvetica, arial, sans-serif
+  color brand-color
+
+body
+  position relative
+  margin 0
+  color #484747
+
+.background
+  width 100%
+  height 100%
+  position absolute
+  top 0in
+  left 0
+  padding 0.25in
+  box-sizing border-box
+
+.background-color
+  width 100%
+  height 100%
+  mix-blend-mode multiply
+
+.background-image
+  position absolute
+  top 0.25in
+  right 0.25in
+  bottom 0.25in
+  left 0.25in
+  background-size cover
+  background-position center
+  z-index -1
+  mix-blend-mode multiply
+
+.content
+  display -webkit-box
+  display -webkit-flex
+  display -ms-flexbox
+  display flex
+  -webkit-box-pack justify
+  -webkit-justify-content space-between
+  -ms-flex-pack justify
+  justify-content space-between
+  -webkit-box-orient horizontal
+  -webkit-box-direction normal
+  -webkit-flex-direction row
+  -ms-flex-direction row
+  flex-direction row
+  -webkit-box-align start
+  -webkit-align-items flex-start
+  -ms-flex-align start
+  align-items flex-start
+  height 100%
+  padding 1em
+  position relative
+  box-sizing border-box
+
+.logo
+  height 2em
+  -webkit-align-self flex-end
+  -ms-flex-item-align end
+  align-self flex-end
+  svg
+    height 100%
+
+.uploaded-logo
+  height 100%
+
+.call-to-action
+  margin-top 1em !important
+  font-size 0.8em
+  text-decoration none
+  padding 0.7em 1em
+  display inline-block
+  font-weight 800
+  border 0.1em solid #fff
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  margin 0
+  line-height 1em
+
+@media (min-aspect-ratio: 2/10)
+  .logo
+    -webkit-align-self center
+    -ms-flex-item-align center
+    align-self center
+  .content
+    -webkit-box-orient vertical
+    -webkit-box-direction normal
+    -webkit-flex-direction column
+    -ms-flex-direction column
+    flex-direction column
+
+@media (min-aspect-ratio: 4/10)
+  .logo
+    -webkit-align-self center
+    -ms-flex-item-align center
+    align-self center
+
+@media (min-aspect-ratio: 1/2)
+  .logo
+    -webkit-align-self flex-end
+    -ms-flex-item-align end
+    align-self flex-end
+
+@media (min-aspect-ratio: 1/1)
+  body
+    &:after
+      opacity 0
+
+@media (min-aspect-ratio: 2/1)
+  .content
+    -webkit-box-orient horizontal
+    -webkit-box-direction normal
+    -webkit-flex-direction row
+    -ms-flex-direction row
+    flex-direction row
+
+@media (min-aspect-ratio: 10/4)
+  body
+    &:after
+      opacity 0
+
+@media (min-aspect-ratio: 10/2)
+  .logo
+    -webkit-align-self center
+    -ms-flex-item-align center
+    align-self center
+
+@media (min-width: 294pt) and (max-width: 370pt) and (min-height: 416pt) and (max-height: 490pt)
+  .crop-yes
+    .page
+      height calc(100vh - 1px)
+
+
+@media (min-width: 590pt) and (max-width: 675pt) and (min-height: 835pt) and (max-height: 915pt)
+  .page
+    height 99.9vh !important
+@media (min-width: 1180pt) and (max-width: 1260pt) and (min-height: 1680pt) and (max-height: 1760pt)
+  .page
+    height 99.9vh !important
+      
+@media (min-width: 590pt) and (max-width: 700pt) and (min-height: 280pt) and (max-height: 370pt)
+  .page
+    position relative
+    width 100vw
+    height 100vh
+    overflow hidden
+    box-sizing border-box
+
+@media screen
+  .show-crop-marks
+    .page
+      &:not(:only-child)
+        border-bottom 1px dotted #0ff
+      &:not(:only-child):after
+        &:not(:only-child)
+          color #0ff
+          content 'page break'
+          position absolute
+          bottom 0.5em
+          left 0.5em
+          font-size 70%
+    .content
+      border 1px solid #0ff
+
+.document
+  box-sizing content-box
+  left 0.25in
+  right 0.25in
+  top 0.25in
+  bottom 0.25in
+  position absolute
+  overflow hidden
+  padding 0.23in
+
+.hide-crop-marks
+  .document
+    left 0
+    right 0
+    top 0
+    bottom 0
+    padding 0
+  .content
+    margin 0
+  .crop
+    display none
+  .background
+    padding 0
+  .background-image
+    top 0
+    left 0
+    right 0
+    bottom 0
 

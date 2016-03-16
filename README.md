@@ -1,10 +1,10 @@
 ##Setting it up.
 
 1. Clone this Repository: <br>
-  `git clone git@github.com:RedHatBrand/SKOGenericResizable.git`
+  `git clone git@github.com:jamesrplee/print-generic.git`
 
 2. Navigate to the repo directory: <br>
-  `cd print-generic-template`
+  `cd print-generic`
 
 3. `npm install`
 
