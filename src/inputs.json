@@ -1,5 +1,5 @@
 {
-  "crop-marks": "hide",
+  "crop-marks": "show",
   "text-color": "#fff",
   "background-color": "tomato",
   "background-color-opacity": "1",

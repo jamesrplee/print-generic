@@ -41,7 +41,7 @@
 
   </div><!--page-->
 
-  <!-- TO ADD A NEW PAGE SIMPLY UN-COMMENT THE FOLLOWING CODE  
+
   
   <div class="page">
     <div class="document">
@@ -50,7 +50,6 @@
       </div>
   </div>
   </div> 
--->
  
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
