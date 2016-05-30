@@ -1,3 +1,48 @@
+@media screen
+  .show-crop-marks
+    .page
+      &:not(:only-child)
+        border-bottom 1px dotted #0ff
+      &:not(:only-child):after
+        &:not(:only-child)
+          color #0ff
+          content 'page break'
+          position absolute
+          bottom 0.5em
+          left 0.5em
+          font-size 70%
+    .content
+      border 1px solid #0ff
+
+.document
+  box-sizing content-box
+  left 0.25in
+  right 0.25in
+  top 0.25in
+  bottom 0.25in
+  position absolute
+  overflow hidden
+  padding 0.23in
+
+.hide-crop-marks
+  .document
+    left 0
+    right 0
+    top 0
+    bottom 0
+    padding 0
+  .content
+    margin 0
+  .crop
+    display none
+  .background
+    padding 0
+  .background-image
+    top 0
+    left 0
+    right 0
+    bottom 0
+
 @media print and (min-width: 590pt) and (max-width: 675pt) and (min-height: 835pt) and (max-height: 915pt)
   .page
     height 99.9vh !important
